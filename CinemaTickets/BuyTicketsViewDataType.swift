@@ -5,7 +5,7 @@
  This should be data prepared for presentation on the view so that the view
  doesn't have to do any processing to get this data ready!
  */
-protocol BuyTicketsViewDataType {
+protocol MovieViewDataType {
     
     var movieTitle: String { get }
 }

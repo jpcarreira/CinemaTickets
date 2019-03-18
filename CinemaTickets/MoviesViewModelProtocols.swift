@@ -1,5 +1,5 @@
 /**
- This is the protocol the BuyTicketsViewModel should conform to
+ This is the protocol the MoviesViewModel should conform to
  
  ## It should include:
  
@@ -8,17 +8,17 @@
  - events: sent by the view controller to self (always include a start() which is called
  by the VC in viewDidLoad() so that the VM starts all the required business logic)
  */
-protocol BuyTicketsViewModelType {
+protocol MoviesViewModelType {
     
     /**
      delegates
      */
     
     // reference to the view delegate (so that the view model talks to the view controller)
-    var viewDelegate: BuyTicketsViewModelViewDelegate? { get set }
+    var viewDelegate: MoviesViewModelViewDelegate? { get set }
     
     // reference to the coordinator delegate (so that the view model talks to the coordinator)
-    var coordinatorDelegate: BuyTicketsViewModelCoordinatorDelegate? { get set }
+    var coordinatorDelegate: MoviesViewModelCoordinatorDelegate? { get set }
     
     /**
      datasource
@@ -31,7 +31,7 @@ protocol BuyTicketsViewModelType {
     func numberOfItems() -> Int
     
     // gets a specific weather item
-    func itemForRow(at index: Int) -> BuyTicketsViewDataType
+    func itemForRow(at index: Int) -> MovieViewDataType
     
     /**
      events
@@ -45,7 +45,7 @@ protocol BuyTicketsViewModelType {
 }
 
 
-protocol BuyTicketsViewModelViewDelegate: class {
+protocol MoviesViewModelViewDelegate: class {
     
     // updates the screen when gets new movie data
     func updateScreen()
@@ -55,7 +55,7 @@ protocol BuyTicketsViewModelViewDelegate: class {
 }
 
 
-protocol BuyTicketsViewModelCoordinatorDelegate: class {
+protocol MoviesViewModelCoordinatorDelegate: class {
     
     // when a row with a movie item is tapped
     func didSelectRow(_ at: Int)

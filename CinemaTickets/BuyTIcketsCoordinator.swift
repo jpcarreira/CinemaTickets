@@ -15,12 +15,12 @@ class BuyTicketsCoordinator: Coordinator {
     }
     
     override func start() {
-        guard let buyTicketsViewController = storyboard.instantiateInitialViewController() as? BuyTicketsTableViewController else {
+        guard let moviesViewController = storyboard.instantiateInitialViewController() as? MoviesTableViewController else {
             return
         }
         
         // TODO: set the viewmodel
-        rootViewController.setViewControllers([buyTicketsViewController], animated: true)
+        rootViewController.setViewControllers([moviesViewController], animated: true)
     }
     
     override func finish() {
