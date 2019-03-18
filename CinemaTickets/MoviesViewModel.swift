@@ -57,4 +57,8 @@ extension MoviesViewModel: MoviesViewModelType {
     func refreshData() {
         getMovies()
     }
+    
+    func didSelectRow(at index: Int) {
+        coordinatorDelegate?.didSelect(movie: movies[index])
+    }
 }

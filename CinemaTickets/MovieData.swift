@@ -2,7 +2,10 @@ final class MovieData {
     
     let title: String
     
-    init(title: String) {
+    let synopsis: String?
+    
+    init(title: String, synopsis: String?) {
         self.title = title
+        self.synopsis = synopsis
     }
 }

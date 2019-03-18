@@ -11,7 +11,7 @@ class MoviesApiService {
             if let movieApiData = movieApiData {
                 var movies = [MovieData]()
                 for movie in movieApiData {
-                    movies.append(MovieData(title: movie.title))
+                    movies.append(MovieData(title: movie.title, synopsis: movie.synopsis))
                 }
                 
                 completion(movies)

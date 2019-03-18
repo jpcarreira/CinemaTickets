@@ -8,4 +8,6 @@
 protocol MovieViewDataType {
     
     var movieTitle: String { get }
+    
+    var synopsis: String { get }
 }

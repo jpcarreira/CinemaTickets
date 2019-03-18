@@ -33,6 +33,10 @@ final class MoviesTableViewController: UITableViewController {
         return viewModel.numberOfItems()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectRow(at: indexPath.row)
+    }
+    
     private func setupView() {
         navigationItem.title = viewModel.titleText
         

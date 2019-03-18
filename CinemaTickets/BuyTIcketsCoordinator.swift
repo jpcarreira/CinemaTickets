@@ -10,6 +10,7 @@ class BuyTicketsCoordinator: Coordinator {
     var moviesViewModel: MoviesViewModelType {
         let moviesService = MoviesApiService(api: api)
         let moviesViewModel = MoviesViewModel(service: moviesService)
+        moviesViewModel.coordinatorDelegate = self
         return moviesViewModel
     }
     
@@ -29,5 +30,33 @@ class BuyTicketsCoordinator: Coordinator {
     
     override func finish() {
         rootViewController.popToRootViewController(animated: true)
+    }
+    
+    // navigation
+    private func goToShoppingCart() {
+        // TODO:
+    }
+    
+    private func goToTicketOpions(movie: MovieViewDataType) {
+        guard let ticketOptionsViewController = storyboard.instantiateViewController(withIdentifier: "TicketOptions") as? TicketOptionsViewController else {
+            return
+        }
+        
+        let ticketOptionsViewModel = TicketOptionsViewModel(movie: movie)
+        ticketOptionsViewController.viewModel = ticketOptionsViewModel
+        
+        rootViewController.pushViewController(ticketOptionsViewController, animated: true)
+    }
+}
+
+
+extension BuyTicketsCoordinator: MoviesViewModelCoordinatorDelegate {
+    
+    func didPressShoppingCart() {
+        // TODO:
+    }
+    
+    func didSelect(movie: MovieViewDataType) {
+        goToTicketOpions(movie: movie)
     }
 }

@@ -13,8 +13,13 @@ struct MovieViewData {
 
 
 extension MovieViewData: MovieViewDataType {
+    
     var movieTitle: String {
         return movie.title
+    }
+    
+    var synopsis: String {
+        return movie.synopsis ?? "Synopsis for this movie is not available"
     }
 }
 
