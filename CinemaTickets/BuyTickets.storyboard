@@ -62,6 +62,40 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pd7-3e-32W">
                                 <rect key="frame" x="6" y="232.5" width="363" height="392.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OptionCell" id="HSU-ae-Aaa" customClass="TicketOptionsTableViewCell" customModule="CinemaTickets" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="363" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HSU-ae-Aaa" id="rxD-b8-EPN">
+                                            <rect key="frame" x="0.0" y="0.0" width="363" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1e-Gz-yU3">
+                                                    <rect key="frame" x="21" y="11.5" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="£999.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGE-n0-MN5">
+                                                    <rect key="frame" x="290" y="11.5" width="67" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="J1e-Gz-yU3" firstAttribute="centerY" secondItem="rxD-b8-EPN" secondAttribute="centerY" id="Vik-gw-rbi"/>
+                                                <constraint firstItem="RGE-n0-MN5" firstAttribute="centerY" secondItem="rxD-b8-EPN" secondAttribute="centerY" id="fws-ug-rHl"/>
+                                                <constraint firstAttribute="trailing" secondItem="RGE-n0-MN5" secondAttribute="trailing" constant="6" id="m8H-iJ-HZa"/>
+                                                <constraint firstItem="J1e-Gz-yU3" firstAttribute="leading" secondItem="rxD-b8-EPN" secondAttribute="leadingMargin" constant="6" id="nnJ-2a-gJE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="priceLabel" destination="RGE-n0-MN5" id="cMC-Yz-OKd"/>
+                                            <outlet property="titleLabel" destination="J1e-Gz-yU3" id="ObX-rU-ds1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df0-JM-dYO">
                                 <rect key="frame" x="143" y="631" width="89" height="30"/>
@@ -89,6 +123,7 @@
                     </view>
                     <connections>
                         <outlet property="addToCart" destination="df0-JM-dYO" id="EZN-N8-gNb"/>
+                        <outlet property="optionsTable" destination="Pd7-3e-32W" id="DKI-kW-eCO"/>
                         <outlet property="synopsisLabel" destination="qmW-VU-Ejy" id="wE5-1C-4Yw"/>
                         <outlet property="titleLabel" destination="qF7-5D-wx8" id="eNo-LP-REF"/>
                     </connections>

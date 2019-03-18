@@ -3,7 +3,7 @@ import UIKit
 
 final class MoviesTableViewController: UITableViewController {
     
-    static let cellIdentifier = "MovieCell"
+    private static let cellIdentifier = "MovieCell"
     
     private var activityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
     

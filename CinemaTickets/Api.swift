@@ -25,7 +25,7 @@ final class Api: ApiType {
 final class MockApi: ApiType {
     
     // network delay to fake
-    static let delay = 2
+    static let delay = 1
     
     // some fake movie data
     static let movies = [

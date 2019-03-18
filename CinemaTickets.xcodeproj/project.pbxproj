@@ -21,6 +21,7 @@
 		62532743223D763A00B5F47A /* MovieViewDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62532742223D763A00B5F47A /* MovieViewDataType.swift */; };
 		62532745223FDEA100B5F47A /* TicketOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62532744223FDEA100B5F47A /* TicketOptionsViewController.swift */; };
 		62532747223FFC7300B5F47A /* TicketOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62532746223FFC7300B5F47A /* TicketOptionsViewModel.swift */; };
+		625327492240083700B5F47A /* TIcketOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625327482240083700B5F47A /* TIcketOptionsTableViewCell.swift */; };
 		6280CF03223FC15100742382 /* MoviesApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6280CF02223FC15100742382 /* MoviesApiService.swift */; };
 		6280CF05223FC35400742382 /* MovieViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6280CF04223FC35400742382 /* MovieViewData.swift */; };
 		6280CF08223FC3A200742382 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6280CF07223FC3A200742382 /* MovieData.swift */; };
@@ -44,6 +45,7 @@
 		62532742223D763A00B5F47A /* MovieViewDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewDataType.swift; sourceTree = "<group>"; };
 		62532744223FDEA100B5F47A /* TicketOptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOptionsViewController.swift; sourceTree = "<group>"; };
 		62532746223FFC7300B5F47A /* TicketOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketOptionsViewModel.swift; sourceTree = "<group>"; };
+		625327482240083700B5F47A /* TIcketOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TIcketOptionsTableViewCell.swift; sourceTree = "<group>"; };
 		6280CF02223FC15100742382 /* MoviesApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesApiService.swift; sourceTree = "<group>"; };
 		6280CF04223FC35400742382 /* MovieViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewData.swift; sourceTree = "<group>"; };
 		6280CF07223FC3A200742382 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				62532738223D727300B5F47A /* BuyTickets.storyboard */,
+				625327482240083700B5F47A /* TIcketOptionsTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				6280CF05223FC35400742382 /* MovieViewData.swift in Sources */,
 				6253272B223D6A5C00B5F47A /* Coordinator.swift in Sources */,
 				62532743223D763A00B5F47A /* MovieViewDataType.swift in Sources */,
+				625327492240083700B5F47A /* TIcketOptionsTableViewCell.swift in Sources */,
 				62532731223D6B3800B5F47A /* Api.swift in Sources */,
 				62532714223D684C00B5F47A /* AppDelegate.swift in Sources */,
 				62532733223D6E3600B5F47A /* BuyTIcketsCoordinator.swift in Sources */,
