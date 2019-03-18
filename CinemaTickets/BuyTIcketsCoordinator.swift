@@ -7,7 +7,11 @@ class BuyTicketsCoordinator: Coordinator {
     let storyboard = UIStoryboard(name: "BuyTickets", bundle: Bundle.main)
     let api: ApiType
     
-    // TODO: add reference to the view model and set it up as a computed var
+    var moviesViewModel: MoviesViewModelType {
+        let moviesService = MoviesApiService(api: api)
+        let moviesViewModel = MoviesViewModel(service: moviesService)
+        return moviesViewModel
+    }
     
     init(rootViewController: UINavigationController, api: ApiType) {
         self.rootViewController = rootViewController
@@ -19,7 +23,7 @@ class BuyTicketsCoordinator: Coordinator {
             return
         }
         
-        // TODO: set the viewmodel
+        moviesViewController.viewModel = moviesViewModel
         rootViewController.setViewControllers([moviesViewController], animated: true)
     }
     
