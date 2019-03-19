@@ -30,7 +30,7 @@ final class TicketOptionsViewModel {
 
 
 extension TicketOptionsViewModel: TicketOptionsViewModelType {
-    
+
     var titleText: String {
         return movie.movieTitle
     }
@@ -54,6 +54,10 @@ extension TicketOptionsViewModel: TicketOptionsViewModelType {
     func itemForRow(at index: (Int, Int)) -> PricingItemViewDataType {
         let pricingOption = pricingOptions[index.0].options[index.1]
         return PricingItemViewData(pricingItem: pricingOption)
+    }
+    
+    func sectionTitle(for index: Int) -> String {
+        return pricingOptions[index].name
     }
     
     func start() {

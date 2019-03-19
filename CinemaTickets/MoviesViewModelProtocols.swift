@@ -111,6 +111,8 @@ protocol TicketOptionsViewModelType {
     
     func itemForRow(at index: (Int, Int)) -> PricingItemViewDataType
     
+    func sectionTitle(for index: Int) -> String
+    
     /**
      events
      */

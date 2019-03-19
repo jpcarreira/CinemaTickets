@@ -79,4 +79,7 @@ extension TicketOptionsViewController: UITableViewDataSource {
 
 extension TicketOptionsViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.sectionTitle(for: section)
+    }
 }
