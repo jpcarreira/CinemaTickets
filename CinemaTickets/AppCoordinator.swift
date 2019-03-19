@@ -13,7 +13,7 @@ class AppCoordinator: Coordinator {
     }()
     
     lazy var buyTicketsCoordinator: BuyTicketsCoordinator = {
-        let buyTicketsCoordinator = BuyTicketsCoordinator(rootViewController: rootViewController, api: api)
+        let buyTicketsCoordinator = BuyTicketsCoordinator(rootViewController: rootViewController, api: api, storage: storage)
         addChildCoordinator(buyTicketsCoordinator)
         return buyTicketsCoordinator
     }()
@@ -26,6 +26,13 @@ class AppCoordinator: Coordinator {
         // a setup with different schemes, each with a different arg (e.g., we could always return the Api() object
         // unless we had an arg like "-mockApi")
         return MockApi()
+    }()
+    
+    // what was said above to the ApiType also applies to the storage object,
+    // here we'll just use a simple in-memory array but we could easily replace
+    // for another storage mechanism
+    let storage: StorageType = {
+        return InMemoryStorage()
     }()
     
     init(window: UIWindow?) {

@@ -6,6 +6,8 @@ final class TicketOptionsViewModel {
     
     private var service: TicketPricingApiService
     
+    private var storage: StorageType
+    
     private var movie: MovieViewDataType
 
     private var pricingOptions = [PricingOption]() {
@@ -35,8 +37,9 @@ final class TicketOptionsViewModel {
     }
 
     private var ticketNumbers: [Int] = {
-        // TODO: keeping a simple model, here we could request our service to only display how many tickets are available
-        return [1, 2, 3, 4, 5, 6, 7, 8, 9]
+        // TODO: keeping a simple model assuming every user can only buy 5 tickets
+        // (here we could request our service to only display how many tickets are available)
+        return [1, 2, 3, 4, 5]
     }()
     
     private var isLoading: Bool = false {
@@ -45,8 +48,9 @@ final class TicketOptionsViewModel {
         }
     }
     
-    init(service: TicketPricingApiService, movie: MovieViewDataType) {
+    init(service: TicketPricingApiService, storage: StorageType, movie: MovieViewDataType) {
         self.service = service
+        self.storage = storage
         self.movie = movie
     }
     
@@ -130,10 +134,12 @@ extension TicketOptionsViewModel: TicketOptionsViewModelType {
     
     func didSelectAddToCart(withPickerSelected index: Int) {
         let cartItem = CartItem(movieTitle: movie.movieTitle, numberOfTickets: ticketNumbers[index], options: getCurrentlySelectedOptionsPricingOptionItems())
-    
-        // TODO: save this to storage
-        print(cartItem)
+        storage.save(cartItem)
         
-        // TODO: navigate back 
+        viewDelegate?.promptUserForCartOperation("Added to cart", message: "\(cartItem.numberOfTickets) tickets to watch \"\(cartItem.movieTitle)\" were added to your shopping cart.")
+    }
+    
+    func didPressPrompt() {
+        coordinatorDelegate?.didPressAddToCartButton()
     }
 }

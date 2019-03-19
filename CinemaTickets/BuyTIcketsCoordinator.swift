@@ -6,6 +6,7 @@ class BuyTicketsCoordinator: Coordinator {
     let rootViewController: UINavigationController
     let storyboard = UIStoryboard(name: "BuyTickets", bundle: Bundle.main)
     let api: ApiType
+    let storage: StorageType
     
     var moviesViewModel: MoviesViewModelType {
         let moviesService = MoviesApiService(api: api)
@@ -14,9 +15,10 @@ class BuyTicketsCoordinator: Coordinator {
         return moviesViewModel
     }
     
-    init(rootViewController: UINavigationController, api: ApiType) {
+    init(rootViewController: UINavigationController, api: ApiType, storage: StorageType) {
         self.rootViewController = rootViewController
         self.api = api
+        self.storage = storage
     }
     
     override func start() {
@@ -43,7 +45,8 @@ class BuyTicketsCoordinator: Coordinator {
         }
         
         let ticketPricingService = TicketPricingApiService(api: api)
-        let ticketOptionsViewModel = TicketOptionsViewModel(service: ticketPricingService, movie: movie)
+        let ticketOptionsViewModel = TicketOptionsViewModel(service: ticketPricingService, storage: storage, movie: movie)
+        ticketOptionsViewModel.coordinatorDelegate = self
         ticketOptionsViewController.viewModel = ticketOptionsViewModel
         
         rootViewController.pushViewController(ticketOptionsViewController, animated: true)
@@ -59,5 +62,13 @@ extension BuyTicketsCoordinator: MoviesViewModelCoordinatorDelegate {
     
     func didSelect(movie: MovieViewDataType) {
         goToTicketOptions(movie: movie)
+    }
+}
+
+
+extension BuyTicketsCoordinator: TicketOptionsViewModelCoordinatorDelegate {
+    
+    func didPressAddToCartButton() {
+        rootViewController.popViewController(animated: true)
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6246457C2241AF2B00E2C34B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246457B2241AF2B00E2C34B /* Storage.swift */; };
 		62532714223D684C00B5F47A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62532713223D684C00B5F47A /* AppDelegate.swift */; };
 		6253271B223D684F00B5F47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6253271A223D684F00B5F47A /* Assets.xcassets */; };
 		6253271E223D684F00B5F47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6253271C223D684F00B5F47A /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6246457B2241AF2B00E2C34B /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		62532710223D684C00B5F47A /* CinemaTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemaTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62532713223D684C00B5F47A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6253271A223D684F00B5F47A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6246457A2241AF0700E2C34B /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				6246457B2241AF2B00E2C34B /* Storage.swift */,
+			);
+			name = Storage;
+			sourceTree = "<group>";
+		};
 		62532707223D684C00B5F47A = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +151,7 @@
 		6253272E223D6B0300B5F47A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				6246457A2241AF0700E2C34B /* Storage */,
 				6253272F223D6B1400B5F47A /* Networking */,
 			);
 			name = Services;
@@ -331,6 +342,7 @@
 				6280CF08223FC3A200742382 /* MovieData.swift in Sources */,
 				6253272D223D6A8C00B5F47A /* AppCoordinator.swift in Sources */,
 				62532740223D74A700B5F47A /* MoviesViewModelProtocols.swift in Sources */,
+				6246457C2241AF2B00E2C34B /* Storage.swift in Sources */,
 				62532745223FDEA100B5F47A /* TicketOptionsViewController.swift in Sources */,
 				6280CF0B223FC5AC00742382 /* MovieApiData.swift in Sources */,
 				625D7B9B2240453900636530 /* PricingOptionApiData.swift in Sources */,

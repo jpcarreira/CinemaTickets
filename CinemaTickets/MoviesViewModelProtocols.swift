@@ -134,6 +134,8 @@ protocol TicketOptionsViewModelType {
     func didSelectPricingOption(at index: (Int, Int))
     
     func didSelectAddToCart(withPickerSelected index: Int)
+    
+    func didPressPrompt()
 }
 
 
@@ -144,6 +146,8 @@ protocol TicketOptionsViewModelViewDelegate {
     func updateTicketOptions()
     
     func toggleLoadingAnimation(isAnimating: Bool)
+    
+    func promptUserForCartOperation(_ title: String, message: String)
 }
 
 

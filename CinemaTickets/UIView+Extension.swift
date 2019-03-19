@@ -2,7 +2,7 @@ import UIKit
 
 extension UIView {
     
-    var activityIndicatorViewTag: Int {
+    private var activityIndicatorViewTag: Int {
         return 269034
     }
     

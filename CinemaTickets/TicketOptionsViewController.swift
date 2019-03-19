@@ -45,7 +45,7 @@ final class TicketOptionsViewController: UIViewController {
 
 
 extension TicketOptionsViewController: TicketOptionsViewModelViewDelegate {
-    
+
     func updateScreen() {
         titleLabel.text = viewModel.titleText
         synopsisLabel.text = viewModel.synopsisText
@@ -65,6 +65,16 @@ extension TicketOptionsViewController: TicketOptionsViewModelViewDelegate {
         } else {
             view.stopActivityIndicator()
         }
+    }
+    
+    func promptUserForCartOperation(_ title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default) { _ in
+            self.viewModel.didPressPrompt()
+        }
+        
+        alertController.addAction(action)
+        present(alertController, animated: true, completion: nil)
     }
 }
 
