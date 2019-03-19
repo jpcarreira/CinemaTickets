@@ -7,7 +7,7 @@ final class TicketOptionsViewModel {
     private var service: TicketPricingApiService
     
     private var movie: MovieViewDataType
-    
+
     private var pricingOptions = [PricingOption]() {
         didSet {
             self.viewDelegate?.updateTicketOptions()
@@ -24,6 +24,11 @@ final class TicketOptionsViewModel {
     }
     
     private var currentlySelectedOptions = [(Int, Int)]()
+
+    private var ticketNumbers: [Int] = {
+        // TODO: keeping a simple model, here we could request our service to only display how many tickets are available
+        return [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    }()
     
     init(service: TicketPricingApiService, movie: MovieViewDataType) {
         self.service = service
@@ -48,6 +53,10 @@ extension TicketOptionsViewModel: TicketOptionsViewModelType {
     
     var synopsisText: String {
         return movie.synopsis
+    }
+    
+    var numberOfTicketsText: String {
+        return "Number of tickets:"
     }
     
     var buttonText: String {
@@ -75,6 +84,18 @@ extension TicketOptionsViewModel: TicketOptionsViewModelType {
         return currentlySelectedOptions.contains { option in
             return index == option
         }
+    }
+    
+    var numberOfComponentsInTicketPicker: Int {
+        return 1
+    }
+    
+    var numberOfTickets: Int {
+        return ticketNumbers.count
+    }
+    
+    func ticketNumber(for index: Int) -> String {
+        return "\(ticketNumbers[index])"
     }
     
     func start() {

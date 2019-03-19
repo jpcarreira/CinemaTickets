@@ -103,6 +103,8 @@ protocol TicketOptionsViewModelType {
     
     var synopsisText: String { get }
     
+    var numberOfTicketsText: String { get }
+    
     var buttonText: String { get }
     
     func numberOfPricingOptions() -> Int
@@ -114,6 +116,12 @@ protocol TicketOptionsViewModelType {
     func sectionTitle(for index: Int) -> String
     
     func isCurrentlySelected(at index:(Int, Int)) -> Bool
+    
+    var numberOfComponentsInTicketPicker: Int { get }
+    
+    var numberOfTickets: Int { get }
+    
+    func ticketNumber(for index: Int) -> String
     
     /**
      events

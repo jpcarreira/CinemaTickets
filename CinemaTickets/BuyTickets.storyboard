@@ -47,21 +47,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qF7-5D-wx8">
-                                <rect key="frame" x="137.5" y="32" width="100" height="21"/>
+                                <rect key="frame" x="138" y="32" width="99.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmW-VU-Ejy">
-                                <rect key="frame" x="6" y="65" width="363" height="161.5"/>
+                                <rect key="frame" x="6" y="64.5" width="363" height="161.5"/>
                                 <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pd7-3e-32W">
-                                <rect key="frame" x="6" y="232.5" width="363" height="392.5"/>
+                                <rect key="frame" x="6" y="232" width="363" height="280"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="eVF-H7-Wof"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OptionCell" id="HSU-ae-Aaa" customClass="TicketOptionsTableViewCell" customModule="CinemaTickets" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="363" height="44"/>
@@ -97,8 +100,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CXc-Vf-5tp">
+                                <rect key="frame" x="6" y="524" width="363" height="89"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFi-NX-ghN">
+                                        <rect key="frame" x="0.0" y="0.0" width="99.5" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-qb-Th4">
+                                        <rect key="frame" x="100" y="0.0" width="263" height="89"/>
+                                    </pickerView>
+                                </subviews>
+                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df0-JM-dYO">
-                                <rect key="frame" x="143" y="631" width="89" height="30"/>
+                                <rect key="frame" x="143" y="625" width="89" height="30"/>
                                 <state key="normal" title="Lorem Ipsum"/>
                                 <connections>
                                     <action selector="didPressAddToCartButton:" destination="B8X-MW-Wrd" eventType="touchUpInside" id="2Sd-zd-QEa"/>
@@ -108,21 +125,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="df0-JM-dYO" firstAttribute="centerX" secondItem="3Ce-Fo-YKA" secondAttribute="centerX" id="0rq-9t-kz9"/>
-                            <constraint firstItem="df0-JM-dYO" firstAttribute="top" secondItem="Pd7-3e-32W" secondAttribute="bottom" constant="6" id="7zr-Le-kpb"/>
+                            <constraint firstItem="df0-JM-dYO" firstAttribute="top" secondItem="CXc-Vf-5tp" secondAttribute="bottom" constant="12" id="COl-iY-wNp"/>
+                            <constraint firstItem="0pA-06-mFp" firstAttribute="bottom" secondItem="df0-JM-dYO" secondAttribute="bottom" constant="12" id="Cnq-jZ-5RU"/>
                             <constraint firstItem="Pd7-3e-32W" firstAttribute="top" secondItem="qmW-VU-Ejy" secondAttribute="bottom" constant="6" id="DKC-MG-0W5"/>
                             <constraint firstItem="qF7-5D-wx8" firstAttribute="top" secondItem="0pA-06-mFp" secondAttribute="top" constant="12" id="F95-ll-Kmj"/>
+                            <constraint firstItem="CXc-Vf-5tp" firstAttribute="centerX" secondItem="3Ce-Fo-YKA" secondAttribute="centerX" id="M3P-ol-bug"/>
                             <constraint firstItem="qmW-VU-Ejy" firstAttribute="leading" secondItem="0pA-06-mFp" secondAttribute="leading" constant="6" id="O6B-xr-ubL"/>
+                            <constraint firstItem="CXc-Vf-5tp" firstAttribute="leading" secondItem="0pA-06-mFp" secondAttribute="leading" constant="6" id="UKa-pV-aO2"/>
                             <constraint firstItem="Pd7-3e-32W" firstAttribute="leading" secondItem="0pA-06-mFp" secondAttribute="leading" constant="6" id="brO-mg-fJM"/>
-                            <constraint firstItem="0pA-06-mFp" firstAttribute="bottom" secondItem="df0-JM-dYO" secondAttribute="bottom" constant="6" id="jwa-4h-zUE"/>
+                            <constraint firstItem="CXc-Vf-5tp" firstAttribute="top" secondItem="Pd7-3e-32W" secondAttribute="bottom" constant="12" id="pAu-Yy-0r2"/>
                             <constraint firstAttribute="trailing" secondItem="qmW-VU-Ejy" secondAttribute="trailing" constant="6" id="rSj-Es-Bj7"/>
                             <constraint firstItem="qF7-5D-wx8" firstAttribute="centerX" secondItem="3Ce-Fo-YKA" secondAttribute="centerX" id="stQ-Qs-TF4"/>
                             <constraint firstItem="qmW-VU-Ejy" firstAttribute="top" secondItem="qF7-5D-wx8" secondAttribute="bottom" constant="12" id="t3W-tn-nvo"/>
+                            <constraint firstItem="0pA-06-mFp" firstAttribute="trailing" secondItem="CXc-Vf-5tp" secondAttribute="trailing" constant="6" id="xAg-MU-Ygr"/>
                             <constraint firstItem="0pA-06-mFp" firstAttribute="trailing" secondItem="Pd7-3e-32W" secondAttribute="trailing" constant="6" id="xhl-Yx-z5y"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0pA-06-mFp"/>
                     </view>
                     <connections>
                         <outlet property="addToCart" destination="df0-JM-dYO" id="EZN-N8-gNb"/>
+                        <outlet property="numberOfTicketsLabel" destination="jFi-NX-ghN" id="9dv-Kn-qq7"/>
+                        <outlet property="numberOfTicketsPickerView" destination="Xcq-qb-Th4" id="gqg-CA-oWr"/>
                         <outlet property="optionsTable" destination="Pd7-3e-32W" id="DKI-kW-eCO"/>
                         <outlet property="synopsisLabel" destination="qmW-VU-Ejy" id="wE5-1C-4Yw"/>
                         <outlet property="titleLabel" destination="qF7-5D-wx8" id="eNo-LP-REF"/>
@@ -130,7 +153,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDE-qK-RrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1612" y="153"/>
+            <point key="canvasLocation" x="1612" y="152.47376311844079"/>
         </scene>
     </scenes>
 </document>

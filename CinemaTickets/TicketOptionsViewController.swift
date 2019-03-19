@@ -9,6 +9,10 @@ final class TicketOptionsViewController: UIViewController {
     
     @IBOutlet weak var optionsTable: UITableView!
     
+    @IBOutlet weak var numberOfTicketsLabel: UILabel!
+    
+    @IBOutlet weak var numberOfTicketsPickerView: UIPickerView!
+    
     @IBOutlet weak var addToCart: UIButton!
     
     private static let cellIdentifier = "OptionCell"
@@ -33,6 +37,9 @@ final class TicketOptionsViewController: UIViewController {
     private func setupView() {
         optionsTable.dataSource = self
         optionsTable.delegate = self
+        
+        numberOfTicketsPickerView.dataSource = self
+        numberOfTicketsPickerView.delegate = self
     }
 }
 
@@ -42,6 +49,7 @@ extension TicketOptionsViewController: TicketOptionsViewModelViewDelegate {
     func updateScreen() {
         titleLabel.text = viewModel.titleText
         synopsisLabel.text = viewModel.synopsisText
+        numberOfTicketsLabel.text = viewModel.numberOfTicketsText
         addToCart.setTitle(viewModel.buttonText, for: .normal)
     }
     
@@ -86,5 +94,25 @@ extension TicketOptionsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectPricingOption(at: (indexPath.section, indexPath.row))
+    }
+}
+
+
+extension TicketOptionsViewController: UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return viewModel.numberOfComponentsInTicketPicker
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return viewModel.numberOfTickets
+    }
+}
+
+
+extension TicketOptionsViewController: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return viewModel.ticketNumber(for: row)
     }
 }
