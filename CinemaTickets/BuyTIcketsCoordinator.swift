@@ -37,12 +37,13 @@ class BuyTicketsCoordinator: Coordinator {
         // TODO:
     }
     
-    private func goToTicketOpions(movie: MovieViewDataType) {
+    private func goToTicketOptions(movie: MovieViewDataType) {
         guard let ticketOptionsViewController = storyboard.instantiateViewController(withIdentifier: "TicketOptions") as? TicketOptionsViewController else {
             return
         }
         
-        let ticketOptionsViewModel = TicketOptionsViewModel(movie: movie)
+        let ticketPricingService = TicketPricingApiService(api: api)
+        let ticketOptionsViewModel = TicketOptionsViewModel(service: ticketPricingService, movie: movie)
         ticketOptionsViewController.viewModel = ticketOptionsViewModel
         
         rootViewController.pushViewController(ticketOptionsViewController, animated: true)
@@ -57,6 +58,6 @@ extension BuyTicketsCoordinator: MoviesViewModelCoordinatorDelegate {
     }
     
     func didSelect(movie: MovieViewDataType) {
-        goToTicketOpions(movie: movie)
+        goToTicketOptions(movie: movie)
     }
 }

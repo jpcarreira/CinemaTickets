@@ -105,6 +105,12 @@ protocol TicketOptionsViewModelType {
     
     var buttonText: String { get }
     
+    func numberOfPricingOptions() -> Int
+    
+    func numberOfPricingItems(forOption at: Int) -> Int
+    
+    func itemForRow(at index: (Int, Int)) -> PricingItemViewDataType
+    
     /**
      events
      */
@@ -120,6 +126,8 @@ protocol TicketOptionsViewModelType {
 protocol TicketOptionsViewModelViewDelegate {
     
     func updateScreen()
+    
+    func updateTicketOptions()
 }
 
 

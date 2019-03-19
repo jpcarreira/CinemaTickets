@@ -38,11 +38,15 @@ final class TicketOptionsViewController: UIViewController {
 
 
 extension TicketOptionsViewController: TicketOptionsViewModelViewDelegate {
-    
+
     func updateScreen() {
         titleLabel.text = viewModel.titleText
         synopsisLabel.text = viewModel.synopsisText
         addToCart.setTitle(viewModel.buttonText, for: .normal)
+    }
+    
+    func updateTicketOptions() {
+        optionsTable.reloadData()
     }
 }
 
@@ -50,8 +54,7 @@ extension TicketOptionsViewController: TicketOptionsViewModelViewDelegate {
 extension TicketOptionsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // TODO:
-        return 2
+        return viewModel.numberOfPricingItems(forOption: section)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,16 +64,15 @@ extension TicketOptionsViewController: UITableViewDataSource {
             cell = TicketOptionsTableViewCell(style: .default, reuseIdentifier: TicketOptionsViewController.cellIdentifier)
         }
         
-        // TODO: placeholder text
-        cell?.titleLabel.text = "special offer"
-        cell?.priceLabel.text = "$9.9"
+        let pricingItem = viewModel.itemForRow(at: (indexPath.section, indexPath.row))
+        cell?.titleLabel.text = pricingItem.name
+        cell?.priceLabel.text = "\(pricingItem.price)"
         
         return cell!
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        // TODO:
-        return 2
+        return viewModel.numberOfPricingOptions()
     }
 }
 

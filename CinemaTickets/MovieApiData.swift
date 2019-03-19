@@ -1,5 +1,7 @@
 struct MovieApiData {
     
+    let movieId: Int
+    
     let title: String
     
     let synopsis: String?

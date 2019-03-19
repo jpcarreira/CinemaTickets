@@ -51,6 +51,7 @@ final class MoviesTableViewController: UITableViewController {
 
 
 extension MoviesTableViewController: MoviesViewModelViewDelegate {
+    
     func updateScreen() {
         tableView.reloadData()
     }

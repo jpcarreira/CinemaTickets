@@ -4,7 +4,7 @@ final class MoviesViewModel {
     
     var coordinatorDelegate: MoviesViewModelCoordinatorDelegate?
     
-    var service: MoviesApiService
+    private var service: MoviesApiService
     
     private var isLoading: Bool = false {
         didSet {

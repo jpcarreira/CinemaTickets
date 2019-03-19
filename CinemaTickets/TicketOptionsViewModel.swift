@@ -4,10 +4,27 @@ final class TicketOptionsViewModel {
     
     var coordinatorDelegate: TicketOptionsViewModelCoordinatorDelegate?
     
+    private var service: TicketPricingApiService
+    
     private var movie: MovieViewDataType
     
-    init(movie: MovieViewDataType) {
+    private var pricingOptions = [PricingOption]() {
+        didSet {
+            self.viewDelegate?.updateTicketOptions()
+        }
+    }
+    
+    init(service: TicketPricingApiService, movie: MovieViewDataType) {
+        self.service = service
         self.movie = movie
+    }
+    
+    private func getPricingOptions() {
+        service.getPricing(movie.movieId) { pricingOptions in
+            if let options = pricingOptions {
+                self.pricingOptions = options
+            }
+        }
     }
 }
 
@@ -26,11 +43,25 @@ extension TicketOptionsViewModel: TicketOptionsViewModelType {
         return "Add to cart"
     }
     
+    func numberOfPricingOptions() -> Int {
+        return pricingOptions.count
+    }
+    
+    func numberOfPricingItems(forOption at: Int) -> Int {
+        return pricingOptions[at].options.count
+    }
+    
+    func itemForRow(at index: (Int, Int)) -> PricingItemViewDataType {
+        let pricingOption = pricingOptions[index.0].options[index.1]
+        return PricingItemViewData(pricingItem: pricingOption)
+    }
+    
     func start() {
         viewDelegate?.updateScreen()
+        getPricingOptions()
     }
     
     func didSelectAddToCart() {
-        // TODO
+        // TODO:
     }
 }

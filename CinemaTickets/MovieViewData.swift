@@ -4,15 +4,19 @@
  */
 struct MovieViewData {
     
-    private let movie: MovieData
+    let movie: MovieData
     
-    init(movie: MovieData) {
-        self.movie = movie
-    }
+//    init(movie: MovieData) {
+//        self.movie = movie
+//    }
 }
 
 
 extension MovieViewData: MovieViewDataType {
+  
+    var movieId: Int {
+        return movie.movieId
+    }
     
     var movieTitle: String {
         return movie.title
@@ -22,4 +26,3 @@ extension MovieViewData: MovieViewDataType {
         return movie.synopsis ?? "Synopsis for this movie is not available"
     }
 }
-

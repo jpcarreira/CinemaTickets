@@ -7,6 +7,8 @@
  */
 protocol MovieViewDataType {
     
+    var movieId: Int { get }
+    
     var movieTitle: String { get }
     
     var synopsis: String { get }
