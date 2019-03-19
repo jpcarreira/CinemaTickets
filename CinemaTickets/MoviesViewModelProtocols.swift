@@ -142,6 +142,8 @@ protocol TicketOptionsViewModelViewDelegate {
     func updateScreen()
     
     func updateTicketOptions()
+    
+    func toggleLoadingAnimation(isAnimating: Bool)
 }
 
 

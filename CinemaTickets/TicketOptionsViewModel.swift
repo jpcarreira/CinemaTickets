@@ -30,15 +30,23 @@ final class TicketOptionsViewModel {
         return [1, 2, 3, 4, 5, 6, 7, 8, 9]
     }()
     
+    private var isLoading: Bool = false {
+        didSet {
+            viewDelegate?.toggleLoadingAnimation(isAnimating: isLoading)
+        }
+    }
+    
     init(service: TicketPricingApiService, movie: MovieViewDataType) {
         self.service = service
         self.movie = movie
     }
     
     private func getPricingOptions() {
+        isLoading = true
         service.getPricing(movie.movieId) { pricingOptions in
             if let options = pricingOptions {
                 self.pricingOptions = options
+                self.isLoading = false
             }
         }
     }

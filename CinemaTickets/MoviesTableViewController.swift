@@ -4,9 +4,7 @@ import UIKit
 final class MoviesTableViewController: UITableViewController {
     
     private static let cellIdentifier = "MovieCell"
-    
-    private var activityIndicatorView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-    
+
     var viewModel: MoviesViewModelType! {
         didSet {
             viewModel.viewDelegate = self
@@ -39,13 +37,6 @@ final class MoviesTableViewController: UITableViewController {
     
     private func setupView() {
         navigationItem.title = viewModel.titleText
-        
-        // TODO: move to UIView extension
-        activityIndicatorView.style = .whiteLarge
-        activityIndicatorView.backgroundColor = .gray
-        activityIndicatorView.center = tableView.center
-        activityIndicatorView.layer.cornerRadius = 10
-        view.addSubview(activityIndicatorView)
     }
 }
 
@@ -60,9 +51,9 @@ extension MoviesTableViewController: MoviesViewModelViewDelegate {
         tableView.isUserInteractionEnabled = !isAnimating
         
         if isAnimating {
-            activityIndicatorView.startAnimating()
+            view.startActivityIndicator(at: tableView.center)
         } else {
-            activityIndicatorView.stopAnimating()
+            view.stopActivityIndicator()
         }
     }
 }

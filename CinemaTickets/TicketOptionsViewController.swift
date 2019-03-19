@@ -45,7 +45,7 @@ final class TicketOptionsViewController: UIViewController {
 
 
 extension TicketOptionsViewController: TicketOptionsViewModelViewDelegate {
-
+    
     func updateScreen() {
         titleLabel.text = viewModel.titleText
         synopsisLabel.text = viewModel.synopsisText
@@ -55,6 +55,16 @@ extension TicketOptionsViewController: TicketOptionsViewModelViewDelegate {
     
     func updateTicketOptions() {
         optionsTable.reloadData()
+    }
+    
+    func toggleLoadingAnimation(isAnimating: Bool) {
+        view.isUserInteractionEnabled = !isAnimating
+        
+        if isAnimating {
+            view.startActivityIndicator(at: view.center)
+        } else {
+            view.stopActivityIndicator()
+        }
     }
 }
 
