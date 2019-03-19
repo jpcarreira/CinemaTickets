@@ -24,6 +24,15 @@ final class TicketOptionsViewModel {
     }
     
     private var currentlySelectedOptions = [(Int, Int)]()
+    
+    private func getCurrentlySelectedOptionsPricingOptionItems() -> [PricingOptionItem] {
+        var items = [PricingOptionItem]()
+        for index in currentlySelectedOptions {
+            items.append(pricingOptions[index.0].options[index.1])
+        }
+        
+        return items
+    }
 
     private var ticketNumbers: [Int] = {
         // TODO: keeping a simple model, here we could request our service to only display how many tickets are available
@@ -54,7 +63,7 @@ final class TicketOptionsViewModel {
 
 
 extension TicketOptionsViewModel: TicketOptionsViewModelType {
-
+    
     var titleText: String {
         return movie.movieTitle
     }
@@ -119,7 +128,12 @@ extension TicketOptionsViewModel: TicketOptionsViewModelType {
         viewDelegate?.updateTicketOptions()
     }
     
-    func didSelectAddToCart() {
-        // TODO:
+    func didSelectAddToCart(withPickerSelected index: Int) {
+        let cartItem = CartItem(movieTitle: movie.movieTitle, numberOfTickets: ticketNumbers[index], options: getCurrentlySelectedOptionsPricingOptionItems())
+    
+        // TODO: save this to storage
+        print(cartItem)
+        
+        // TODO: navigate back 
     }
 }

@@ -133,7 +133,7 @@ protocol TicketOptionsViewModelType {
     // when user taps a row
     func didSelectPricingOption(at index: (Int, Int))
     
-    func didSelectAddToCart()
+    func didSelectAddToCart(withPickerSelected index: Int)
 }
 
 

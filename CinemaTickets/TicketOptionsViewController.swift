@@ -31,7 +31,7 @@ final class TicketOptionsViewController: UIViewController {
     }
     
     @IBAction func didPressAddToCartButton(_ sender: Any) {
-        viewModel.didSelectAddToCart()
+        viewModel.didSelectAddToCart(withPickerSelected: numberOfTicketsPickerView.selectedRow(inComponent: 0))
     }
     
     private func setupView() {
