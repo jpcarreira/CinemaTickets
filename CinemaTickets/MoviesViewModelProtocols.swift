@@ -113,6 +113,8 @@ protocol TicketOptionsViewModelType {
     
     func sectionTitle(for index: Int) -> String
     
+    func isCurrentlySelected(at index:(Int, Int)) -> Bool
+    
     /**
      events
      */
@@ -121,6 +123,8 @@ protocol TicketOptionsViewModelType {
     func start()
     
     // when user taps a row
+    func didSelectPricingOption(at index: (Int, Int))
+    
     func didSelectAddToCart()
 }
 

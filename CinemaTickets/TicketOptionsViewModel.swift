@@ -11,8 +11,19 @@ final class TicketOptionsViewModel {
     private var pricingOptions = [PricingOption]() {
         didSet {
             self.viewDelegate?.updateTicketOptions()
+            
+            // TODO: chained for-loops, refactor!
+            for (outerIndex, option) in pricingOptions.enumerated() {
+                for (innerIndex, item) in option.options.enumerated() {
+                    if item.isDefaultSelection {
+                        currentlySelectedOptions.append((outerIndex, innerIndex))
+                    }
+                }
+            }
         }
     }
+    
+    private var currentlySelectedOptions = [(Int, Int)]()
     
     init(service: TicketPricingApiService, movie: MovieViewDataType) {
         self.service = service
@@ -60,9 +71,23 @@ extension TicketOptionsViewModel: TicketOptionsViewModelType {
         return pricingOptions[index].name
     }
     
+    func isCurrentlySelected(at index: (Int, Int)) -> Bool {
+        return currentlySelectedOptions.contains { option in
+            return index == option
+        }
+    }
+    
     func start() {
         viewDelegate?.updateScreen()
         getPricingOptions()
+    }
+    
+    func didSelectPricingOption(at index: (Int, Int)) {
+        var updatedSelection = currentlySelectedOptions.filter { $0.0 != index.0 }
+        updatedSelection.append(index)
+        currentlySelectedOptions = updatedSelection
+        
+        viewDelegate?.updateTicketOptions()
     }
     
     func didSelectAddToCart() {

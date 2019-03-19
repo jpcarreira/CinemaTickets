@@ -67,6 +67,7 @@ extension TicketOptionsViewController: UITableViewDataSource {
         let pricingItem = viewModel.itemForRow(at: (indexPath.section, indexPath.row))
         cell?.titleLabel.text = pricingItem.name
         cell?.priceLabel.text = "\(pricingItem.price)"
+        cell?.accessoryType = viewModel.isCurrentlySelected(at: (indexPath.section, indexPath.row)) ? .checkmark : .none
         
         return cell!
     }
@@ -81,5 +82,9 @@ extension TicketOptionsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return viewModel.sectionTitle(for: section)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.didSelectPricingOption(at: (indexPath.section, indexPath.row))
     }
 }
