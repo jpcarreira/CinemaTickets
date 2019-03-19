@@ -17,8 +17,9 @@ class TicketPricingApiService {
                         pricingOptionItems.append(PricingOptionItem(name: item.0, price: item.1, isDefaultSelection: item.2))
                     }
                     pricingOptions.append(PricingOption(name: pricingOption.name, options: pricingOptionItems))
-                    completion(pricingOptions)
                 }
+                
+                completion(pricingOptions)
             }
             
             completion(nil)
