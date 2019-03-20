@@ -188,3 +188,33 @@ protocol EmptyCartViewModelCoordinatorDelegate {
     func didPressClose()
 }
 
+
+// MARK: - Cart
+
+protocol CartViewModelType {
+    
+    var coordinatorDelegate: CartViewModelCoordinatorDelegate? { get set }
+    
+    /**
+     datasource
+     */
+    
+    // title shown in nav bar
+    var titleText: String { get }
+    
+    var totalPriceText: String { get }
+    
+    /**
+     events
+     */
+    
+    func start()
+    
+    func didPressClose()
+}
+
+
+protocol CartViewModelCoordinatorDelegate {
+    
+    func didPressCloseCart()
+}

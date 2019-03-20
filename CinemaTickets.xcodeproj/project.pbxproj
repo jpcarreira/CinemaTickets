@@ -10,6 +10,8 @@
 		6246457C2241AF2B00E2C34B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246457B2241AF2B00E2C34B /* Storage.swift */; };
 		624645812241C58100E2C34B /* EmptyCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624645802241C58100E2C34B /* EmptyCartViewController.swift */; };
 		624645832241C6AF00E2C34B /* EmptyCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624645822241C6AF00E2C34B /* EmptyCartViewModel.swift */; };
+		6246458522429BB000E2C34B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246458422429BB000E2C34B /* CartViewController.swift */; };
+		6246458722429E1700E2C34B /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246458622429E1700E2C34B /* CartViewModel.swift */; };
 		62532714223D684C00B5F47A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62532713223D684C00B5F47A /* AppDelegate.swift */; };
 		6253271B223D684F00B5F47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6253271A223D684F00B5F47A /* Assets.xcassets */; };
 		6253271E223D684F00B5F47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6253271C223D684F00B5F47A /* LaunchScreen.storyboard */; };
@@ -42,6 +44,8 @@
 		6246457B2241AF2B00E2C34B /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		624645802241C58100E2C34B /* EmptyCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartViewController.swift; sourceTree = "<group>"; };
 		624645822241C6AF00E2C34B /* EmptyCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartViewModel.swift; sourceTree = "<group>"; };
+		6246458422429BB000E2C34B /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		6246458622429E1700E2C34B /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		62532710223D684C00B5F47A /* CinemaTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemaTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62532713223D684C00B5F47A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6253271A223D684F00B5F47A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 				6253273D223D747D00B5F47A /* MoviesViewModel.swift */,
 				62532746223FFC7300B5F47A /* TicketOptionsViewModel.swift */,
 				624645822241C6AF00E2C34B /* EmptyCartViewModel.swift */,
+				6246458622429E1700E2C34B /* CartViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				62532734223D6FC000B5F47A /* MoviesTableViewController.swift */,
 				62532744223FDEA100B5F47A /* TicketOptionsViewController.swift */,
 				624645802241C58100E2C34B /* EmptyCartViewController.swift */,
+				6246458422429BB000E2C34B /* CartViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -359,6 +365,7 @@
 				62532747223FFC7300B5F47A /* TicketOptionsViewModel.swift in Sources */,
 				6253273E223D747D00B5F47A /* MoviesViewModel.swift in Sources */,
 				6280CF05223FC35400742382 /* MovieViewData.swift in Sources */,
+				6246458722429E1700E2C34B /* CartViewModel.swift in Sources */,
 				625D7BA0224066FD00636530 /* PricingItemViewData.swift in Sources */,
 				6253272B223D6A5C00B5F47A /* Coordinator.swift in Sources */,
 				625D7B9E224046A400636530 /* FakeData.swift in Sources */,
@@ -368,6 +375,7 @@
 				62532731223D6B3800B5F47A /* Api.swift in Sources */,
 				62532714223D684C00B5F47A /* AppDelegate.swift in Sources */,
 				62532733223D6E3600B5F47A /* BuyTIcketsCoordinator.swift in Sources */,
+				6246458522429BB000E2C34B /* CartViewController.swift in Sources */,
 				625D7BA52241506D00636530 /* CartItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

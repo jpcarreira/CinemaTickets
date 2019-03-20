@@ -187,5 +187,52 @@
             </objects>
             <point key="canvasLocation" x="2537" y="153"/>
         </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="FDo-ks-Mcr">
+            <objects>
+                <viewController storyboardIdentifier="Cart" id="Sbh-Bf-KlT" customClass="CartViewController" customModule="CinemaTickets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xNG-Zt-cKt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="58y-wk-ozX">
+                                <rect key="frame" x="6" y="26" width="363" height="530"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum: $999,99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eiW-XF-2GJ">
+                                <rect key="frame" x="6" y="580" width="363" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oac-uo-bmP">
+                                <rect key="frame" x="143" y="625" width="89" height="30"/>
+                                <state key="normal" title="Lorem ipsum"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Oac-uo-bmP" firstAttribute="centerX" secondItem="xNG-Zt-cKt" secondAttribute="centerX" id="Hlq-9p-Utt"/>
+                            <constraint firstItem="58y-wk-ozX" firstAttribute="leading" secondItem="Eie-LP-BIW" secondAttribute="leading" constant="6" id="Rbm-SM-CIs"/>
+                            <constraint firstItem="eiW-XF-2GJ" firstAttribute="leading" secondItem="Eie-LP-BIW" secondAttribute="leading" constant="6" id="RmR-Qe-bln"/>
+                            <constraint firstItem="58y-wk-ozX" firstAttribute="top" secondItem="Eie-LP-BIW" secondAttribute="top" constant="6" id="bcF-l7-K0r"/>
+                            <constraint firstItem="Eie-LP-BIW" firstAttribute="trailing" secondItem="58y-wk-ozX" secondAttribute="trailing" constant="6" id="juw-Zz-yHO"/>
+                            <constraint firstItem="Eie-LP-BIW" firstAttribute="bottom" secondItem="Oac-uo-bmP" secondAttribute="bottom" constant="12" id="nBV-Ul-Qgx"/>
+                            <constraint firstItem="eiW-XF-2GJ" firstAttribute="top" secondItem="58y-wk-ozX" secondAttribute="bottom" constant="24" id="pTM-dz-gs7"/>
+                            <constraint firstItem="Oac-uo-bmP" firstAttribute="top" secondItem="eiW-XF-2GJ" secondAttribute="bottom" constant="24" id="q8Z-mA-HIW"/>
+                            <constraint firstItem="eiW-XF-2GJ" firstAttribute="centerX" secondItem="xNG-Zt-cKt" secondAttribute="centerX" id="yfQ-fu-ndx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Eie-LP-BIW"/>
+                    </view>
+                    <connections>
+                        <outlet property="buyNowButton" destination="Oac-uo-bmP" id="P9g-IJ-o8M"/>
+                        <outlet property="optionsTable" destination="58y-wk-ozX" id="ZAO-Lq-1I4"/>
+                        <outlet property="totalPriceLabel" destination="eiW-XF-2GJ" id="xzG-ta-eUq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CHa-rX-Dpr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3391" y="152"/>
+        </scene>
     </scenes>
 </document>
