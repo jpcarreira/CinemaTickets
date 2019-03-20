@@ -37,6 +37,11 @@ final class MoviesTableViewController: UITableViewController {
     
     private func setupView() {
         navigationItem.title = viewModel.titleText
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(didPressShoppingCartIcon))
+    }
+    
+    @objc private func didPressShoppingCartIcon() {
+        viewModel.didPressShoppingCartIcon()
     }
 }
 

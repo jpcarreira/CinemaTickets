@@ -36,7 +36,19 @@ class BuyTicketsCoordinator: Coordinator {
     
     // navigation
     private func goToShoppingCart() {
-        // TODO:
+        if storage.numberOfCartItems == 0 {
+            guard let emptyCartViewController = storyboard.instantiateViewController(withIdentifier: "EmptyCart") as? EmptyCartViewController else {
+                return
+            }
+            
+            let emptyCartViewModel = EmptyCartViewModel()
+            emptyCartViewModel.coordinatorDelegate = self
+            emptyCartViewController.viewModel = emptyCartViewModel
+            let navigationController = UINavigationController(rootViewController: emptyCartViewController)
+            rootViewController.present(navigationController, animated: true, completion: nil)
+        } else {
+            // TODO: show cart
+        }
     }
     
     private func goToTicketOptions(movie: MovieViewDataType) {
@@ -57,7 +69,7 @@ class BuyTicketsCoordinator: Coordinator {
 extension BuyTicketsCoordinator: MoviesViewModelCoordinatorDelegate {
     
     func didPressShoppingCart() {
-        // TODO:
+        goToShoppingCart()
     }
     
     func didSelect(movie: MovieViewDataType) {
@@ -70,5 +82,13 @@ extension BuyTicketsCoordinator: TicketOptionsViewModelCoordinatorDelegate {
     
     func didPressAddToCartButton() {
         rootViewController.popViewController(animated: true)
+    }
+}
+
+
+extension BuyTicketsCoordinator: EmptyCartViewModelCoordinatorDelegate {
+    
+    func didPressClose() {
+        rootViewController.dismiss(animated: true, completion: nil)
     }
 }

@@ -37,7 +37,7 @@ final class MoviesViewModel {
 
 
 extension MoviesViewModel: MoviesViewModelType {
-    
+ 
     var titleText: String {
         return "Select a movie"
     }
@@ -60,5 +60,9 @@ extension MoviesViewModel: MoviesViewModelType {
     
     func didSelectRow(at index: Int) {
         coordinatorDelegate?.didSelect(movie: movies[index])
+    }
+    
+    func didPressShoppingCartIcon() {
+        coordinatorDelegate?.didPressShoppingCart()
     }
 }

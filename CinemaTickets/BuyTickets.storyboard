@@ -110,7 +110,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcq-qb-Th4">
-                                        <rect key="frame" x="100" y="0.0" width="263" height="89"/>
+                                        <rect key="frame" x="99.5" y="0.0" width="263.5" height="89"/>
                                     </pickerView>
                                 </subviews>
                             </stackView>
@@ -154,6 +154,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fDE-qK-RrY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1612" y="152.47376311844079"/>
+        </scene>
+        <!--Empty Cart View Controller-->
+        <scene sceneID="Qd4-nt-0qv">
+            <objects>
+                <viewController storyboardIdentifier="EmptyCart" id="g6S-qx-50m" customClass="EmptyCartViewController" customModule="CinemaTickets" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dCZ-Mh-zpY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUS-uw-jfK">
+                                <rect key="frame" x="6" y="303" width="363" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oUS-uw-jfK" firstAttribute="centerX" secondItem="dCZ-Mh-zpY" secondAttribute="centerX" id="Bgf-cf-vq9"/>
+                            <constraint firstItem="oUS-uw-jfK" firstAttribute="leading" secondItem="dCZ-Mh-zpY" secondAttribute="leading" constant="6" id="MXf-uZ-ELR"/>
+                            <constraint firstAttribute="trailing" secondItem="oUS-uw-jfK" secondAttribute="trailing" constant="6" id="Sl6-mg-HUt"/>
+                            <constraint firstItem="oUS-uw-jfK" firstAttribute="centerY" secondItem="dCZ-Mh-zpY" secondAttribute="centerY" id="jxw-0T-7rf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oib-R7-aj2"/>
+                    </view>
+                    <connections>
+                        <outlet property="emptyCartLabel" destination="oUS-uw-jfK" id="VJT-Jg-zxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZNp-BD-iZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2537" y="153"/>
         </scene>
     </scenes>
 </document>

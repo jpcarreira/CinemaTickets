@@ -47,6 +47,9 @@ protocol MoviesViewModelType {
     
     // when user taps a row
     func didSelectRow(at index: Int)
+    
+    // when user taps shopping cart bar button item
+    func didPressShoppingCartIcon()
 }
 
 
@@ -155,3 +158,33 @@ protocol TicketOptionsViewModelCoordinatorDelegate {
     
     func didPressAddToCartButton()
 }
+
+
+// MARK: - Empty Cart
+
+protocol EmptyCartViewModelType {
+
+    var coordinatorDelegate: EmptyCartViewModelCoordinatorDelegate? { get set }
+    
+    /**
+     datasource
+     */
+    
+    // title shown in nav bar
+    var titleText: String { get }
+    
+    var mainText: String { get }
+    
+    /**
+     events
+     */
+    
+    func didPressClose()
+}
+
+
+protocol EmptyCartViewModelCoordinatorDelegate {
+    
+    func didPressClose()
+}
+

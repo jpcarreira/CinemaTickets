@@ -1,5 +1,7 @@
 protocol StorageType {
     
+    var numberOfCartItems: Int { get }
+    
     func save(_ cartItem: CartItem)
     
     func getAllCartItems() -> [CartItem]
@@ -11,6 +13,10 @@ protocol StorageType {
 final class InMemoryStorage: StorageType {
     
     private var data = [CartItem]()
+    
+    var numberOfCartItems: Int {
+        return data.count
+    }
     
     func save(_ cartItem: CartItem) {
         data.append(cartItem)

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6246457C2241AF2B00E2C34B /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246457B2241AF2B00E2C34B /* Storage.swift */; };
+		624645812241C58100E2C34B /* EmptyCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624645802241C58100E2C34B /* EmptyCartViewController.swift */; };
+		624645832241C6AF00E2C34B /* EmptyCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624645822241C6AF00E2C34B /* EmptyCartViewModel.swift */; };
 		62532714223D684C00B5F47A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62532713223D684C00B5F47A /* AppDelegate.swift */; };
 		6253271B223D684F00B5F47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6253271A223D684F00B5F47A /* Assets.xcassets */; };
 		6253271E223D684F00B5F47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6253271C223D684F00B5F47A /* LaunchScreen.storyboard */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		6246457B2241AF2B00E2C34B /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		624645802241C58100E2C34B /* EmptyCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartViewController.swift; sourceTree = "<group>"; };
+		624645822241C6AF00E2C34B /* EmptyCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartViewModel.swift; sourceTree = "<group>"; };
 		62532710223D684C00B5F47A /* CinemaTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemaTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62532713223D684C00B5F47A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6253271A223D684F00B5F47A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 				6253273F223D74A700B5F47A /* MoviesViewModelProtocols.swift */,
 				6253273D223D747D00B5F47A /* MoviesViewModel.swift */,
 				62532746223FFC7300B5F47A /* TicketOptionsViewModel.swift */,
+				624645822241C6AF00E2C34B /* EmptyCartViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -192,6 +197,7 @@
 			children = (
 				62532734223D6FC000B5F47A /* MoviesTableViewController.swift */,
 				62532744223FDEA100B5F47A /* TicketOptionsViewController.swift */,
+				624645802241C58100E2C34B /* EmptyCartViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				6253272D223D6A8C00B5F47A /* AppCoordinator.swift in Sources */,
 				62532740223D74A700B5F47A /* MoviesViewModelProtocols.swift in Sources */,
 				6246457C2241AF2B00E2C34B /* Storage.swift in Sources */,
+				624645832241C6AF00E2C34B /* EmptyCartViewModel.swift in Sources */,
 				62532745223FDEA100B5F47A /* TicketOptionsViewController.swift in Sources */,
 				6280CF0B223FC5AC00742382 /* MovieApiData.swift in Sources */,
 				625D7B9B2240453900636530 /* PricingOptionApiData.swift in Sources */,
@@ -357,6 +364,7 @@
 				625D7B9E224046A400636530 /* FakeData.swift in Sources */,
 				62532743223D763A00B5F47A /* MovieViewDataType.swift in Sources */,
 				625327492240083700B5F47A /* TIcketOptionsTableViewCell.swift in Sources */,
+				624645812241C58100E2C34B /* EmptyCartViewController.swift in Sources */,
 				62532731223D6B3800B5F47A /* Api.swift in Sources */,
 				62532714223D684C00B5F47A /* AppDelegate.swift in Sources */,
 				62532733223D6E3600B5F47A /* BuyTIcketsCoordinator.swift in Sources */,
