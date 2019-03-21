@@ -5,10 +5,6 @@
 struct MovieViewData {
     
     let movie: MovieData
-    
-//    init(movie: MovieData) {
-//        self.movie = movie
-//    }
 }
 
 

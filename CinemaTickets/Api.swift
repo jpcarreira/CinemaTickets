@@ -31,7 +31,7 @@ final class Api: ApiType {
 final class MockApi: ApiType {
     
     // network delay to fake
-    static let delay = 1
+    static let delay = 2
     
     func fetchAllMovies(completion: @escaping ([MovieApiData]?) -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(MockApi.delay)) {

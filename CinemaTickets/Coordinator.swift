@@ -3,7 +3,7 @@
  
  ## Main responsabilities:
  
- - instantiate ViewControllers and ViewModels
+ - instantiate ViewControllers (VCs) and ViewModels (VMs)
  - instantiate and inject dependencies into the VCs and VMs
  - present or push VCs onto the screen
  */

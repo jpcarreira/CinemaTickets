@@ -22,7 +22,7 @@ class AppCoordinator: Coordinator {
     // anything conforming to the ApiType protocol
     let api: ApiType = {
         // for the sake of this demo we just return the MockApi, meaning the entire app will always use fake requests
-        // everwhere. However, here we could check for any arg passed in during the lunch, meaning we can easily make
+        // everywhere. However, here we could check for any arg passed in during the lunch, meaning we can easily make
         // a setup with different schemes, each with a different arg (e.g., we could always return the Api() object
         // unless we had an arg like "-mockApi")
         return MockApi()

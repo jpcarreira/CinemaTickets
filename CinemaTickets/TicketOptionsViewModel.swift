@@ -38,7 +38,7 @@ final class TicketOptionsViewModel {
 
     private var ticketNumbers: [Int] = {
         // TODO: keeping a simple model assuming every user can only buy 5 tickets
-        // (here we could request our service to only display how many tickets are available)
+        // (here we could request our service to only display how many tickets are available
         return [1, 2, 3, 4, 5]
     }()
     

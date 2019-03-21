@@ -1,6 +1,20 @@
 import UIKit
 
-
+/**
+ In this demo there's just one scene (Buy Tickets) so this is the only coordinator we'll use
+ However, in a real-world app, where we have more features (login, onboarding, etc...) we would use
+ a different coordinator for each use-case, that way we ensure that the app's related functionality is
+ restricted to it's own coordinator
+ 
+ (for example, if the app had a login flow before getting into the buy tickets feature, the AppCoordinator
+ would have the LoginCoordinator added as a child and, once the login was done, it would be removed from the
+ AppCoordinator which would then add this one and have it started, as it is right now)
+ 
+ This is also a nice way to manage dependencies, each coordinator only has the dependencies it needs. For example,
+ a login flow might need the ApiType to communicate with the server so a LoginCoordinator would have that dependency
+ injected, however as it doesn't need anything like storage or geolocation we can keep these services away from it
+ and only inject them in the coordinators where we need them
+ */
 class BuyTicketsCoordinator: Coordinator {
     
     let rootViewController: UINavigationController
@@ -36,7 +50,6 @@ class BuyTicketsCoordinator: Coordinator {
     
     // navigation
     private func goToShoppingCart() {
-        // TODO:
         if storage.numberOfCartItems == 0 {
             guard let emptyCartViewController = storyboard.instantiateViewController(withIdentifier: "EmptyCart") as? EmptyCartViewController else {
                 return

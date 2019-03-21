@@ -10,6 +10,11 @@ protocol StorageType {
 }
 
 
+/**
+ A rudimentary in-memory storage, in a real-world app we'd replace this for Realm or CoreData
+ (however it's a good practise to keep the StorageType protocol so that we could easily swap
+ for another storage)
+ */
 final class InMemoryStorage: StorageType {
     
     private var data = [CartItem]()
