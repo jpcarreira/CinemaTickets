@@ -52,7 +52,7 @@ class BuyTicketsCoordinator: Coordinator {
                 return
             }
             
-            let cartViewModel = CartViewModel()
+            let cartViewModel = CartViewModel(storage: storage)
             cartViewModel.coordinatorDelegate = self
             cartViewController.viewModel = cartViewModel
             let navigationController = UINavigationController(rootViewController: cartViewController)

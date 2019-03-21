@@ -12,6 +12,8 @@
 		624645832241C6AF00E2C34B /* EmptyCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624645822241C6AF00E2C34B /* EmptyCartViewModel.swift */; };
 		6246458522429BB000E2C34B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246458422429BB000E2C34B /* CartViewController.swift */; };
 		6246458722429E1700E2C34B /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246458622429E1700E2C34B /* CartViewModel.swift */; };
+		624645892242FD2D00E2C34B /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624645882242FD2D00E2C34B /* CartItemCell.swift */; };
+		6246458B224309D600E2C34B /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6246458A224309D600E2C34B /* Double+Extension.swift */; };
 		62532714223D684C00B5F47A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62532713223D684C00B5F47A /* AppDelegate.swift */; };
 		6253271B223D684F00B5F47A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6253271A223D684F00B5F47A /* Assets.xcassets */; };
 		6253271E223D684F00B5F47A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6253271C223D684F00B5F47A /* LaunchScreen.storyboard */; };
@@ -46,6 +48,8 @@
 		624645822241C6AF00E2C34B /* EmptyCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCartViewModel.swift; sourceTree = "<group>"; };
 		6246458422429BB000E2C34B /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		6246458622429E1700E2C34B /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		624645882242FD2D00E2C34B /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
+		6246458A224309D600E2C34B /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		62532710223D684C00B5F47A /* CinemaTickets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CinemaTickets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62532713223D684C00B5F47A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6253271A223D684F00B5F47A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -181,6 +185,7 @@
 			children = (
 				62532738223D727300B5F47A /* BuyTickets.storyboard */,
 				625327482240083700B5F47A /* TIcketOptionsTableViewCell.swift */,
+				624645882242FD2D00E2C34B /* CartItemCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -247,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				625D7BA22241499100636530 /* UIView+Extension.swift */,
+				6246458A224309D600E2C34B /* Double+Extension.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -354,8 +360,10 @@
 				6280CF08223FC3A200742382 /* MovieData.swift in Sources */,
 				6253272D223D6A8C00B5F47A /* AppCoordinator.swift in Sources */,
 				62532740223D74A700B5F47A /* MoviesViewModelProtocols.swift in Sources */,
+				624645892242FD2D00E2C34B /* CartItemCell.swift in Sources */,
 				6246457C2241AF2B00E2C34B /* Storage.swift in Sources */,
 				624645832241C6AF00E2C34B /* EmptyCartViewModel.swift in Sources */,
+				6246458B224309D600E2C34B /* Double+Extension.swift in Sources */,
 				62532745223FDEA100B5F47A /* TicketOptionsViewController.swift in Sources */,
 				6280CF0B223FC5AC00742382 /* MovieApiData.swift in Sources */,
 				625D7B9B2240453900636530 /* PricingOptionApiData.swift in Sources */,

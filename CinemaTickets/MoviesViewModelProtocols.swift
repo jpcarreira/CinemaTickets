@@ -204,6 +204,16 @@ protocol CartViewModelType {
     
     var totalPriceText: String { get }
     
+    // number of movies to display
+    func numberOfCartItems() -> Int
+    
+    // gets a specific weather item
+    func itemCartForRow(at index: Int) -> CartItem
+    
+    func optionsTextForItem(at index: Int) -> String
+    
+    func priceTextForItem(at index:Int) -> String
+    
     /**
      events
      */
